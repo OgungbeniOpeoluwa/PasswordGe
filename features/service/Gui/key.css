@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #93c4c1;
+}
+#container{
+    background-color: #fff;
+    width: 100%;
+    height: 90vh;
+    margin: 20px auto;
+    margin-top: 100px;
+    max-width: 800px;
+    border-radius: 20px;
+    
+}
+
+#AppName{
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    font-family: "Urbanist", "sans-serif";
+    color: #0f1114;
+    padding-top: 60px;
+    
+}
+
+#passwordDetails{
+    font-family: "Urbanist", "sans-serif";
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 400;
+    color: #5b5b5b;
+}
+
+
+#formContainer{
+    margin-top: 50px;
+    text-align: center;
+}
+
+#upper{
+    margin-right:460px ;
+    font-size: 21px;
+    font-weight: 600;
+    font-family: "Urbanist", "sans-serif";
+    
+}
+
+#UpperCaseAlphabeth{
+    width: 20px;
+    height: 20px;
+}
+
+.parent{
+    border: 1px solid #d7d7d7;
+    width: 675px;
+    height: 40px;
+    padding-top: 19px;
+    border-radius: 10px;
+    margin-left: 50px;
+    
+}
+
+#inputsText::placeholder{
+    color: #B8BDCD;
+    padding-left:20px;
+
+}
+
+#inputsText{
+    width:675px;
+    height: 50px;
+    padding-top: 5px;
+    border-radius: 10px;
+    margin-top: -20px;
+    outline: none;
+    border: 1px solid #D7D7D7;
+    font-size: 21px;
+}
+.view{
+    background-color: #E5F1FF;
+    width:580px;
+    height: 50px;
+    padding-top: 5px;
+    border-radius: 10px;
+    margin-top: 1px;
+    margin-left:45px;
+    /* padding-left: 40px; */
+}
+
+button{
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    border-radius: 10px;
+    border:1px solid #d7d7d7;
+    background-color: #fff;
+
+}
