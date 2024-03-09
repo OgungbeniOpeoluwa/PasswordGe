@@ -26,7 +26,6 @@ result.addEventListener("click",(e)=>{
         sendData(length,url)
         results =""
     } else if(results == "numeric"){
-        console.log("i am here ")
         const url = "http://localhost:5050/numeric"
         sendData(length,url)
         results=""
@@ -35,7 +34,7 @@ result.addEventListener("click",(e)=>{
         sendData(length,url)
         results=""
     }else if(results == "numericsymbols"){
-        const url = "http://localhost:5050/alphNumeric"
+        const url = "http://localhost:5050/alphaNumeric"
         sendData(length,url)
         results=""
     }else if(results == "alphasymbols"){
@@ -44,7 +43,7 @@ result.addEventListener("click",(e)=>{
        results=""
     }else{
         const url = "http://localhost:5050/alphabeth"
-        sendData = (length,url)
+        sendData(length,url)
     results=""}
 
 
@@ -62,8 +61,8 @@ const sendData = async(data,url)=>{
           body: JSON.stringify(data),
         }) 
         let result = await response.json();
-        console.log(result)
         view.textContent = result.res;
+
       } catch (error) {
         view.innerHTML = error;
       }
@@ -77,11 +76,15 @@ const sendData = async(data,url)=>{
 
 
 function copy() {
-    var copyText = document.getElementsByClassName("view")
-
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); 
-    navigator.clipboard.writeText(copyText.value);
-}
+    // Select the text field
+    // copyText.select();
+    // copyText.setSelectionRange(0, 99999); // For mobile devices
+  
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(view.innerHTML);
+    
+    // Alert the copied text
+    alert("Copied the text: " + view.innerHTML);
+  }
     
    

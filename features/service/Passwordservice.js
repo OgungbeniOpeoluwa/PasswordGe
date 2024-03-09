@@ -12,17 +12,22 @@ const allCharacter = async(request)=>{
   if(!pattern.test(length)){
     throw new LengthException("Lenght must contain number from 1-9 or more");
   }
-  let count = 0;
+  
   let password = ""
   
-  while(count < length){
+  while(password.length < length){
     password += capitalLetter.charAt(Math.floor(Math.random()*capitalLetter.length))
-    password+=smallLetter.charAt(Math.floor(Math.random()*smallLetter.length))
+    password += smallLetter.charAt(Math.floor(Math.random()*smallLetter.length))
     password += numbers.charAt(Math.floor(Math.random()*numbers.length))
     password += characters.charAt(Math.floor(Math.random()*characters.length))
-    count++;
   }
-    return password;
+ 
+  if(password.length > length){
+    let reduce = password.slice(0,length)
+    password = reduce;
+  }
+   
+  return password;
 }
 
 
@@ -33,13 +38,17 @@ const alphaNumeric = async(request)=>{
   if(!pattern.test(length)){
     throw new LengthException("Lenght must contain number from 0-9 or more");
   }
-  let count = 0
   let password = ""
-  while(count < length){
+ 
+  while(password.length <= length){
     password += capitalLetter.charAt(Math.floor(Math.random()*capitalLetter.length))
     password+=smallLetter.charAt(Math.floor(Math.random()*smallLetter.length))
     password += numbers.charAt(Math.floor(Math.random()*numbers.length))
-    count++;
+  }
+  
+  if(password.length > length){
+    let reduce = password.slice(0,length)
+    password = reduce;
   }
     return password;
 
@@ -54,13 +63,18 @@ const alphabeth = async(request)=>{
     throw new LengthException("Lenght must contain number from 0-9 or more");
   }
   let password = ""
-  let count = 0
-   while(count < length){
+  
+  while(password.length < length){
     password += capitalLetter.charAt(Math.floor(Math.random()*capitalLetter.length))
     password+=smallLetter.charAt(Math.floor(Math.random()*smallLetter.length))
-    count++;
   }
-    return password;
+  
+  if(password.length > length){
+    let reduce = password.slice(0,length)
+    password = reduce;
+  }
+    
+  return password;
 
 }
 const numeric = async(request)=>{
@@ -70,13 +84,18 @@ const numeric = async(request)=>{
   if(!pattern.test(length)){
     throw new LengthException("Lenght must contain number from 0-9 or more");
   }
-  let count = 0;
   let password = ""
-  while(count < length){
+  
+  while(password.length < length){
     password += numbers.charAt(Math.floor(Math.random()*numbers.length))
-    count++;
   }
-    return password;
+
+  if(password.length > length){
+    let reduce = password.slice(0,length)
+    password = reduce;
+  }
+   
+  return password;
 }
 
 const alphaSymbol = async(request)=>{
@@ -87,14 +106,19 @@ const alphaSymbol = async(request)=>{
     throw new LengthException("Lenght must contain number from 0-9 or more");
   }
   let password = ""
-  let count = 0;
-  while(count < length){
+  
+  while(password.length < length){
     password += capitalLetter.charAt(Math.floor(Math.random()*capitalLetter.length))
     password+=smallLetter.charAt(Math.floor(Math.random()*smallLetter.length))
     password += characters.charAt(Math.floor(Math.random()*characters.length))
-    count++;
   }
-    return password;
+
+  if(password.length > length){
+    let reduce = password.slice(0,length)
+    password = reduce;
+  }
+    
+  return password;
 
 }
 
@@ -105,15 +129,23 @@ const numericSymbol = async(request) =>{
   if(!pattern.test(length)){
     throw new LengthException("Lenght must contain number from 0-9 or more");
   }
-  let password = ""
-  let count = 0;
-  while(count < length){
-    password+=numbers.charAt(Math.floor(Math.random()*smallLetter.length))
+  
+  let password=""
+ 
+  while(password.length < length){
+    password +=numbers.charAt(Math.floor(Math.random()*smallLetter.length))
     password += characters.charAt(Math.floor(Math.random()*characters.length))
-    count++;
   }
+  console.log(password)
+ 
+  if(password.length > length){
+    let reduce = password.slice(0,length)
+    password = reduce;
+  }
+  
   return password
 
 }
+
 
 module.exports = {allCharacter,alphaNumeric,alphabeth,numeric,alphaSymbol,numericSymbol}
